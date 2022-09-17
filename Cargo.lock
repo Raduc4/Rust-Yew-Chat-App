@@ -9,17 +9,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d301b3b94cb4b2f23d7917810addbbaff90738e0ca2be692bd027e70d7e0330c"
 
 [[package]]
-name = "async-broadcast"
-version = "0.3.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "90622698a1218e0b2fb846c97b5f19a0831f6baddee73d9454156365ccfa473b"
-dependencies = [
- "easy-parallel",
- "event-listener",
- "futures-core",
-]
-
-[[package]]
 name = "autocfg"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -67,18 +56,6 @@ dependencies = [
  "cfg-if 1.0.0",
  "wasm-bindgen",
 ]
-
-[[package]]
-name = "easy-parallel"
-version = "3.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1dd4afd79212583ff429b913ad6605242ed7eec277e950b1438f300748f948f4"
-
-[[package]]
-name = "event-listener"
-version = "2.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f7531096570974c3a9dcf9e4b8e1cede1ec26cf5046219fb3b9d897503b9be59"
 
 [[package]]
 name = "fnv"
@@ -243,6 +220,26 @@ dependencies = [
  "gloo-events",
  "js-sys",
  "wasm-bindgen",
+ "web-sys",
+]
+
+[[package]]
+name = "gloo-net"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2899cb1a13be9020b010967adc6b2a8a343b6f1428b90238c9d53ca24decc6db"
+dependencies = [
+ "futures-channel",
+ "futures-core",
+ "futures-sink",
+ "gloo-utils",
+ "js-sys",
+ "pin-project",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
  "web-sys",
 ]
 
@@ -453,22 +450,11 @@ dependencies = [
 
 [[package]]
 name = "reqwasm"
-version = "0.3.1"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fa6aedd568ce547a57fd2a5781b0805497cb418da3b5d207ef504467aa8a5b6b"
+checksum = "05b89870d729c501fa7a68c43bf4d938bbb3a8c156d333d90faa0e8b3e3212fb"
 dependencies = [
- "async-broadcast",
- "futures-core",
- "futures-sink",
- "gloo-utils",
- "js-sys",
- "pin-project",
- "serde",
- "serde_json",
- "thiserror",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "web-sys",
+ "gloo-net",
 ]
 
 [[package]]
